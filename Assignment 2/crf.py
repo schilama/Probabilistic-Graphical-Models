@@ -20,8 +20,7 @@ class CRF(object):
             None
         '''
 
-        #Your code must use the following member variables
-        #for the model parameters. W_F should have dimension (|L|,F)
+        #W_F should have dimension (|L|,F)
         #while W_T should have dimension (|L|,|L|). |L| refers to the
         #number of label types. The value W_T[i,j] refers to the
         #weight on the potential for transitioning from label L[i]
@@ -88,11 +87,10 @@ class CRF(object):
 
     def log_Z(self, X, W_F=None, W_T=None):
         '''
-        Compute the log partition function for a feature sequence X
+        Computes the log partition function for a feature sequence X
         using the parameters W_F and W_T.
-        This computation must use the log-space sum-product message
-        passing algorithm and should be implemented as efficiently
-        as possible.
+        This computation uses the log-space sum-product message
+        passing algorithm.
 
         Args:
             X (numpy.ndarray): the observed data. A an array of shape (T,F)
